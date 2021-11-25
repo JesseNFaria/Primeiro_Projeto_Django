@@ -1,8 +1,8 @@
 from django.shortcuts import render
+from .models import Produto
 
 def index(request):
-    print(request.user)
-    print(str(request.user) != 'AnonymousUser')
+    produtos = Produto.objects.all()
     Usuario = ''
     if str(request.user) != 'AnonymousUser':
       Usuario = f'Bem Vindo {request.user} !'
@@ -14,9 +14,17 @@ def index(request):
 
     context = {
        'usuario': Usuario,
-       'sysadmin': Adm
+       'sysadmin': Adm,
+       'produtos' : produtos 
     }
     return render(request, 'index.html', context)
 
 def contato(request):
     return render(request, 'contato.html')
+
+def produto(request, chave):
+    prod = Produto.objects.get(id=chave)
+    context = {
+       'produto' : prod 
+    }
+    return render(request, 'produto.html', context)
