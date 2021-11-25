@@ -1,14 +1,12 @@
-Iniciando projetos em django
+------Iniciando projetos em django------
 pip freeze > Requerido.txt
 django-admin startproject nome_Projeto .
 django-admin startapp nome_da_aplicação
 python manage.py runserver
 
-
-Trabalhando com migrations
+------Trabalhando com migrations-------
 python manage.py makemigrations
 python manage.py migrate
 
-
-Criando um Super Usuaria do Projeto
+------Criando um Super Usuaria do Projeto-------
 python manage.py createsuperuser
