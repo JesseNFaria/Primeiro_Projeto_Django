@@ -10,3 +10,7 @@ python manage.py migrate
 
 ------Criando um Super Usuaria do Projeto-------
 python manage.py createsuperuser
+python manege.py collectstatic
+
+------Publicação-------
+pip install whitenoise gunicorn
